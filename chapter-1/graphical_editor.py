@@ -8,52 +8,49 @@ width = 0
 height = 0
 
 while True:
-    command = input()
-    c = command[0]
+    command, *arguments = input().split()
 
-    if c == 'I':
-        _, width, height = command.split(maxsplit=2)
-        width, height = map(int, (width, height))
+    if command == 'I':
+        width, height = map(int, arguments)
         image = array.array('u', 'O' * (width + 1) * (height + 1))
 
-    elif c == 'C':
+    elif command == 'C':
         image = array.array('u', 'O' * (width + 1) * (height + 1))
 
-    elif c == 'L':
-        _, x, y, c = command.split(maxsplit=3)
-        x, y = map(int, (x, y))
+    elif command == 'L':
+        x, y = map(int, arguments[:2])
 
-        image[y * width + x] = c
+        image[y * width + x] = arguments[2]
 
-    elif c == 'V':
-        _, x, y1, y2, c = command.split(maxsplit=4)
-        x, y1, y2 = map(int, (x, y1, y2))
+    elif command == 'V':
+        x, y1, y2 = map(int, arguments[:3])
         y1, y2 = sorted((y1, y2))
+        c = arguments[3]
 
         for y in range(y1, y2 + 1):
             image[y * width + x] = c
 
-    elif c == 'H':
-        _, x1, x2, y, c = command.split(maxsplit=4)
-        x1, x2, y = map(int, (x1, x2, y))
+    elif command == 'H':
+        x1, x2, y = map(int, arguments[:3])
         x1, x2 = sorted((x1, x2))
+        c = arguments[3]
 
         for x in range(x1, x2 + 1):
             image[y * width + x] = c
 
-    elif c == 'K':
-        _, x1, y1, x2, y2, c = command.split(maxsplit=5)
-        x1, y1, x2, y2 = map(int, (x1, y1, x2, y2))
+    elif command == 'K':
+        x1, y1, x2, y2 = map(int, arguments[:4])
         x1, x2 = sorted((x1, x2))
         y1, y2 = sorted((y1, y2))
+        c = arguments[4]
 
         for x in range(x1, x2 + 1):
             for y in range(y1, y2 + 1):
                 image[y * width + x] = c
 
-    elif c == 'F':
-        _, x, y, c = command.split(maxsplit=3)
-        x, y = map(int, (x, y))
+    elif command == 'F':
+        x, y = map(int, arguments[:2])
+        c = arguments[2]
 
         old_c = image[y * width + x]
         r = set()
@@ -78,15 +75,14 @@ while True:
                 if image[y2 * width + x2] == old_c:
                     fill(x2, y2)
 
-    elif c =='S':
-        _, name = command.split(maxsplit=1)
-
+    elif command =='S':
+        name, = arguments
         print(name)
 
         for y in range(1, height + 1):
             print(image[y * width + 1 : (y + 1) * width + 1].tounicode())
 
-    elif c == 'X':
+    elif command == 'X':
         break
 
     else:
