@@ -11,3 +11,7 @@
 * [Interpreter](chapter-1/interpreter.py)
 * [Check the Check](chapter-1/check_the_check.py)
 * [Australian Voting](chapter-1/australian_voting.py)
+
+
+#### Chapter 2: Data Structures
+* [Jolly Jumpers](chapter-2/jolly_jumpers.py)
