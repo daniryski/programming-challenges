@@ -24,7 +24,7 @@ def cycle_len(n):
 
 while True:
     try:
-        i, j = map(int, input().split(maxsplit=2))
+        i, j = map(int, input().split(maxsplit=1))
         start, end = sorted((i, j))
 
         print(i, j, max(cycle_len(n) for n in range(start, end + 1)))

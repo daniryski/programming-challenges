@@ -24,7 +24,7 @@ def vertical(position, digit, width):
 
 
 while True:
-    s, n = input().split(maxsplit=2)
+    s, n = input().split(maxsplit=1)
     s = int(s)
     digits = list(map(int, n))
 

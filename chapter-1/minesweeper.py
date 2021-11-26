@@ -31,7 +31,7 @@ def print_field(rows, columns):
 field_number = 0
 
 while True:
-    rows, columns = map(int, input().split(maxsplit=2))
+    rows, columns = map(int, input().split(maxsplit=1))
 
     if (rows, columns) == (0, 0):
         break

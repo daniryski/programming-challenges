@@ -22,7 +22,7 @@ for case in range(0, cases):
                 break
 
             else:
-                ballot.append([int(v) - 1 for v in line.split(maxsplit=n)])
+                ballot.append([int(v) - 1 for v in line.split(maxsplit=n - 1)])
 
         except (EOFError, ValueError):
             break
