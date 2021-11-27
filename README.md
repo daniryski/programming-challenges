@@ -17,3 +17,4 @@
 * [Jolly Jumpers](chapter-2/jolly_jumpers.py)
 * [Poker Hands](chapter-2/poker_hands.py)
 * [Hartals](chapter-2/hartals.py)
+* [Contest Scoreboard](chapter-2/contest_scoreboard.py)
