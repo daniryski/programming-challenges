@@ -3,7 +3,7 @@
 import itertools
 
 
-hand_types = [
+HAND_TYPES = [
         'high card', 'pair', 'two pairs', 'three cards',
         'straight', 'flush', 'full house', 'four cards', 'straight flush']
 
@@ -54,7 +54,7 @@ def rank_hand(hand):
     elif is_flush:
         hand_type = 'flush'
 
-    return (hand_types.index(hand_type), hand_rank)
+    return (HAND_TYPES.index(hand_type), hand_rank)
 
 
 while True:
